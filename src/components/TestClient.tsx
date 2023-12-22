@@ -1,28 +1,25 @@
 "use client";
-import { useDispatch } from "react-redux";
-import { testActions, testSelectors } from "../redux/slices/testSlice";
+import { testSelectors, useTestActions } from "../redux/slices/testSlice";
 import { useSelector } from "react-redux";
 
 const TestClient = () => {
-   const dispatch = useDispatch();
-
-   const { add, subtract, addNumber } = testActions;
-
    // get count with selector function directly
    // const count = useSelector((state: any) => state.test.count);
 
    const count = useSelector(testSelectors.getTestCount);
 
+   const { add, subtract, addNumber } = useTestActions();
+
    const addHandler = () => {
-      dispatch(add());
+      add();
    };
 
    const subtractHandler = () => {
-      dispatch(subtract());
+      subtract();
    };
 
    const addNumberHandler = () => {
-      dispatch(addNumber(5));
+      addNumber(5);
    };
 
    return (
