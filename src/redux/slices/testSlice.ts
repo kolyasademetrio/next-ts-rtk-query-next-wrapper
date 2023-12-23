@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 import buildSlice from "../buildSlice";
 
-interface TestSchema {
+export interface TestSchema {
    count: number;
 }
 
