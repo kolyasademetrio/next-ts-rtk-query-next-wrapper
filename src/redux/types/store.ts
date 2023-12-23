@@ -8,9 +8,12 @@ import {
 // import { AxiosInstance } from "axios";
 // import { rtkApi } from "@/shared/api/rtkApi";
 import { TestSchema } from "@/src/redux/slices/testSlice";
+import { DynamicSchema } from "../slices/dynamicSlice";
 
 export interface StoreSchema {
    test: TestSchema;
+
+   dynamic?: DynamicSchema;
 
    //  lookConstructor?: LookConstructorSchema;
    //  [rtkApi.reducerPath]: ReturnType<typeof rtkApi.reducer>;

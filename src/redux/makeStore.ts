@@ -13,16 +13,11 @@ import { testReducer } from "./slices/testSlice";
 // import { rtkApi } from '@/shared/api/rtkApi';
 import { createReducerManager } from "./createReduserManager";
 
-export const makeStore = (
-   initialState?: StoreSchema,
-   context?: Context,
-   asyncReducers?: ReducersMapObject<StoreSchema>
-) => {
+export const makeStore = (initialState?: StoreSchema, context?: Context) => {
    const rootReducer: ReducersMapObject<StoreSchema> = {
       test: testReducer,
 
       // [rtkApi.reducerPath]: rtkApi.reducer,
-      ...asyncReducers,
    };
 
    const reducerManager = createReducerManager(rootReducer);

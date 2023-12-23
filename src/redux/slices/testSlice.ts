@@ -1,4 +1,3 @@
-import { createSlice } from "@reduxjs/toolkit";
 import buildSlice from "../buildSlice";
 
 export interface TestSchema {
