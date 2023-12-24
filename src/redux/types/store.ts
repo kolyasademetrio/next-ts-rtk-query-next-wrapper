@@ -6,7 +6,7 @@ import {
    CombinedState,
 } from "@reduxjs/toolkit";
 // import { AxiosInstance } from "axios";
-// import { rtkApi } from "@/shared/api/rtkApi";
+import { rtkApi } from "../rtkApi";
 import { TestSchema } from "@/src/redux/slices/testSlice";
 import { DynamicSchema } from "../slices/dynamicSlice";
 
@@ -15,8 +15,7 @@ export interface StoreSchema {
 
    dynamic?: DynamicSchema;
 
-   //  lookConstructor?: LookConstructorSchema;
-   //  [rtkApi.reducerPath]: ReturnType<typeof rtkApi.reducer>;
+   [rtkApi.reducerPath]: ReturnType<typeof rtkApi.reducer>;
 }
 
 export type StoreSchemaKey = keyof StoreSchema;
