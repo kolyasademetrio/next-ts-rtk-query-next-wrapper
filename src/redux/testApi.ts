@@ -7,7 +7,7 @@ interface TestApiDTO {
    userId: number;
 }
 
-export const testApi = rtkApi.injectEndpoints({
+const testApi = rtkApi.injectEndpoints({
    overrideExisting: true,
    endpoints: build => ({
       getTodos: build.query<{ test: TestApiDTO[] }, void>({
