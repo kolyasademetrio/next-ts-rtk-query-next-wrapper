@@ -7,6 +7,8 @@ interface TestApiDTO {
    userId: number;
 }
 
+import { TODOS } from "./mutationApi";
+
 export const testApi = rtkApi.injectEndpoints({
    overrideExisting: true,
    endpoints: build => ({
@@ -15,6 +17,7 @@ export const testApi = rtkApi.injectEndpoints({
          transformResponse: (response: TestApiDTO[]) => {
             return { test: response };
          },
+         providesTags: [TODOS],
       }),
       getTodoById: build.query<{ titleUpdated: string }, { id: string }>({
          query: ({ id }) => `/todos/${id}`,
@@ -28,5 +31,6 @@ export const testApi = rtkApi.injectEndpoints({
 export const {
    endpoints: { getTodos, getTodoById },
    useGetTodosQuery,
+   useLazyGetTodosQuery,
    useGetTodoByIdQuery,
 } = testApi;
